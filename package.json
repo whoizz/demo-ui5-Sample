@@ -1,0 +1,32 @@
+{
+  "name": "demo-ui5-sample",
+  "version": "0.0.1",
+  "description": "",
+  "private": true,
+  "devDependencies": {
+    "@sap/ui5-builder-webide-extension": "1.0.x",
+    "@ui5/cli": "^2.0.3",
+    "eslint": "^5.16.0",
+    "sapui5-runtime": "^1.5.5",
+    "ui5-middleware-servestatic": "^0.1.6",
+    "ui5-task-nwabap-deployer": "^1.0.10",
+    "ui5-task-transpile": "^0.1.6"
+  },
+  "scripts": {
+    "dev-lint": "eslint webapp/**/*.js --fix",
+    "start": "ui5 serve",
+    "build": "ui5 build --clean-dest --include-task=generateManifestBundle generateCachebusterInfo --exclude-task=ui5-task-nwabap-deployer",
+    "deploy": "ui5 build --clean-dest --include-task=generateManifestBundle generateCachebusterInfo ui5-task-nwabap-deployer"
+  },
+  "ui5": {
+    "dependencies": [
+      "@sap/ui5-builder-webide-extension",
+      "ui5-middleware-servestatic",
+      "ui5-task-transpile",
+      "ui5-task-nwabap-deployer"
+    ]
+  },
+  "sapui5-runtime": {
+    "version": "1.38.45"
+  }
+}
